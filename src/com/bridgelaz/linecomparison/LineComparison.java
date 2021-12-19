@@ -7,7 +7,7 @@ public class LineComparison {
 		CalculateLength cal = new CalculateLength();
 		getInput();
 		cal.calLength();
-		CheckEquality check = new CheckEquality();
+		CompareLengthOfLine check = new CompareLengthOfLine();
 		check.checkEquality();
 	}
 	public static void getInput() {
@@ -37,13 +37,16 @@ public class LineComparison {
 			System.out.println("Length of second line = "+length2+" units");
 		}
 }
-	class CheckEquality{
+	class CompareLengthOfLine{
 		public  void checkEquality() {
-			if(CalculateLength.length1.equals(CalculateLength.length2)) {
-				System.out.println("Both lines are EQUAL in length");
+			if(CalculateLength.length1.compareTo(CalculateLength.length2) == 1) {
+				System.out.println("Line1 is greater than line2 in length");
+			}
+			else if (CalculateLength.length1.compareTo(CalculateLength.length2) == -1) {
+				System.out.println("Line1 is less than line2 in length");
 			}
 			else {
-				System.out.println("Both lines are NOT EQUAL in length");
+				System.out.println("Both lines are EQUAL in length");
 			}
 		}
 }
